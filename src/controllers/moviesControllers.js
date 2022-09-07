@@ -1,0 +1,1 @@
+//gerenciar a requisição e a resposta
