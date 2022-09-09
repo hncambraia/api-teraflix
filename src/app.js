@@ -1,10 +1,16 @@
-// modules e require
-const express = require("express");//importa modulo express para dentro do arquivo
-const app = express();//instanciando, deixando disponivel as funcionadades
+// MODULES E REQUIRE
+const express = require("express");
+const app = express();
 
-const cors = require("cors")
+const cors = require("cors");
 app.use(cors());
 
-express.json()
+app.use(express.json());
 
-module.exports = app;//exporta express para todo o projeto
+// definir a rota principal do nosso projeto
+
+const moviesRoutes = require("../src/routes/moviesRoutes");
+
+app.use("/movies", moviesRoutes);
+
+module.exports = app;
